@@ -9,20 +9,20 @@ module test;
 		real time_period, ton; // (In Ns)
 		real duty = 40; // in percentage
 
-			initial begin
-				clk= 0;
-				time_period= 20;
-				ton= (time_period*duty)/100;
-			#100 $finish;
-			end
+	initial begin
+		clk=0;
+		time_period=20;
+		ton=(time_period*duty)/100;
+		#100 $finish;
+	end
 
-			always begin
-			# (time_period-ton) clk= 1;
-			#ton clk= 0;
-			end
+	always begin
+		#(time_period-ton)clk=1;
+		#ton clk=0;
+	end
 
-		initial begin
-			$dumpfile("dump.vcd");
-			$dumpvars(0,clk);
-		end
+	initial begin
+		$dumpfile("dump.vcd");
+		$dumpvars(0,clk);
+	end
 endmodule
