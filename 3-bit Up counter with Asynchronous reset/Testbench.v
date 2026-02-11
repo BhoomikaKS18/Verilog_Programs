@@ -1,7 +1,9 @@
 TESTBENCH
 
 module up_counter_3bit_tb;
-    reg clk,rst;
+
+    reg clk;
+    reg rst;
     wire [2:0] count;
 
   up_counter_3bit dut (clk,rst,count);
@@ -11,9 +13,12 @@ module up_counter_3bit_tb;
         forever #5 clk = ~clk;
     end
 
+   
     initial begin
         rst = 1;          
    #5;  rst = 0;          
+
+                   
    #90; $finish;
     end
 
@@ -26,4 +31,3 @@ module up_counter_3bit_tb;
         $dumpvars(0, tb_up_counter_3bit);
     end
 endmodule
-
