@@ -1,8 +1,8 @@
 module mod10_counter_tb;
-
-    reg clk,rst;
+  reg clk,rst;
   wire [3:0]count;
-  mod10_counter uut ( clk,rst,count);
+	
+  mod10_counter dut ( clk,rst,count);
     initial begin
         clk = 0;
         rst = 0;
@@ -18,11 +18,10 @@ module mod10_counter_tb;
     #5 clk= ~clk;
   end
    initial begin
-        $monitor("Time = %0t | clk = %b, rst = %b, count = %d", $time, clk, rst, count);
+	   $monitor("Time = %0t | clk = %b | rst = %b | count = %d", $time, clk, rst, count);
     end
  initial begin
 			$dumpfile("dump.vcd");
-   $dumpvars(0,clk,rst,count);
+            $dumpvars(0,clk,rst,count);
 		end
-
 endmodule
