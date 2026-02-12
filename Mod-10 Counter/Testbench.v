@@ -8,20 +8,23 @@ module mod10_counter_tb;
         rst = 0;
       #10 rst = 1;
       #80;
-
-        // Reset again mid-simulation
+     // Reset again mid-simulation
         #10 rst = 0;
         #15 rst = 1;
-   	   #30 $finish;
+   	    #30 $finish;
     end
+	
   always begin
     #5 clk= ~clk;
   end
+	
    initial begin
 	   $monitor("Time = %0t | clk = %b | rst = %b | count = %d", $time, clk, rst, count);
     end
+	
  initial begin
 			$dumpfile("dump.vcd");
             $dumpvars(0,clk,rst,count);
 		end
 endmodule
+
