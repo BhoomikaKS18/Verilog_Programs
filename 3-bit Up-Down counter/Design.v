@@ -1,9 +1,6 @@
-module updown(
-  input clk,
-  input rst,
-  input ctrl,
-  output reg [2:0] count
-);
+module updown_conter(
+  input clk,rst,ctrl,
+  output reg [2:0] count);
 
   always @(posedge clk) begin
     if (rst)
@@ -13,5 +10,5 @@ module updown(
     else
       count <= count - 1;
   end
-
 endmodule
+
