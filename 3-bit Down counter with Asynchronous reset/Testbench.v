@@ -13,6 +13,15 @@ module down_counter_3bit_async_tb;
 
         #12 rst = 0;  
 
-        #200 $finish;
+        #80 $finish;
+    end
+    initial begin
+        $monitor("Time=%0t | Reset=%b | Count=%b", $time,rst,count);
+    end
+
+    initial begin
+        $dumpfile("counter.vcd");
+        $dumpvars(0, down_counter_3bit_async_tb);
     end
 endmodule
+
