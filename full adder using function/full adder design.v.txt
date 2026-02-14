@@ -1,13 +1,14 @@
-
 module fa(A,B,cin,s,cout);
   input A,B,cin;
   output s,cout;
+
   function [1:0] full_adder(input A,B,cin);
-    begin
-      full_adder=A+B+cin;
-    end
-      endfunction
-      assign {cout,s}=full_adder(A,B,cin);
-    endmodule
+begin
+full_adder=A+B+cin;
+end
+endfunction
+assign {cout,s}=full_adder(A,B,cin);
+endmodule
 
     
+
