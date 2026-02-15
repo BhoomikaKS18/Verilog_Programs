@@ -1,4 +1,4 @@
-DESIGN
+*******************DESIGN CODE***************************
 
 // Gate level Modelling
 module gray_to_binary(
@@ -18,4 +18,5 @@ module gray_to_binary(
     assign b1 = (b2^g1);
     assign b0 = (b1^g0);
 endmodule
+
 
