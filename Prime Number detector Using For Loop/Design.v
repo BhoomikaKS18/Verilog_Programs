@@ -1,4 +1,4 @@
-module prime_checker(
+module prime_no._detector(
     input [7:0] num,  
     output reg a);
     integer i;
@@ -19,4 +19,5 @@ module prime_checker(
             end
         end
         endmodule
+
 
