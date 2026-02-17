@@ -21,4 +21,10 @@ always #5clk=~clk;
       initial begin
         $monitor("simtime=%0t | in_seq=%b | clk=%b | rst=%b | det_out=%b", $time, in_seq,clk,rst,det_out);
   end
+
+    initial begin
+    $dumpfile("dump.vcd");
+    $dumpvars(0,in_seq,clk,rst,det_out);
+  end
         endmodule
+
