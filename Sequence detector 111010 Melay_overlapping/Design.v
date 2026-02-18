@@ -1,8 +1,6 @@
 module melay_seq_10110_ov(in_seq, clk, rst, det_out);
-
  input in_seq, clk, rst;
  output reg det_out;
-
  reg [2:0] ps, ns;
 
  parameter idle  = 3'b000;
@@ -10,39 +8,44 @@ module melay_seq_10110_ov(in_seq, clk, rst, det_out);
  parameter s10   = 3'b010;
  parameter s101  = 3'b011;
  parameter s1011 = 3'b100;
-
- // State register
+ 
  always @(posedge clk) begin
-   if (!rst)
+  if (!rst)
      ps <= idle;
    else
      ps <= ns;
  end
 
- // Next state & output logic
  always @(in_seq or ps) begin
-   det_out = 0;      // default
-
+   det_out = 0;    
    case(ps)
 
      idle: begin
-       if (in_seq) ns = s1;
-       else ns = idle;
+       if (in_seq) 
+        ns = s1;
+       else 
+        ns = idle;
      end
 
      s1: begin
-       if (in_seq) ns = s1;
-       else ns = s10;
+       if (in_seq) 
+        ns = s1;
+       else 
+        ns = s10;
      end
 
      s10: begin
-       if (in_seq) ns = s101;
-       else ns = idle;
+       if (in_seq) 
+        ns = s101;
+       else 
+        ns = idle;
      end
 
      s101: begin
-       if (in_seq) ns = s1011;
-       else ns = s10;
+       if (in_seq) 
+        ns = s1011;
+       else 
+        ns = s10;
      end
 
      s1011: begin
@@ -61,3 +64,4 @@ module melay_seq_10110_ov(in_seq, clk, rst, det_out);
  end
 
 endmodule
+
