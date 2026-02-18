@@ -1,10 +1,8 @@
-module tb_111010;
+module mealy_111010_nonov_tb;
+ reg clk, rst, in_seq;
+ wire det_out;
 
-reg clk, rst, in_seq;
-wire det_out;
-
-
- mealy_111010_nonov DUT(in_seq, clk, rst, det_out);
+ mealy_111010_nonov dut(in_seq, clk, rst, det_out);
 
 always #5 clk = ~clk;
 
@@ -14,7 +12,7 @@ initial begin
  in_seq = 0;
  #10 rst = 1;
 
- // 111010 -> detect
+ // 111010 
  #10 in_seq=1;
  #10 in_seq=1;
  #10 in_seq=1;
@@ -34,8 +32,8 @@ initial begin
 end
 
 initial begin
- $monitor("Time=%0t In=%b Detected=%b",
-          $time, in_seq, det_out);
+ $monitor("Time=%0t | In=%b | Detected=%b",$time, in_seq, det_out);
 end
 
 endmodule
+
