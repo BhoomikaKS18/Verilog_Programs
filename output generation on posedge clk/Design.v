@@ -1,4 +1,4 @@
-module ouput_gen_posedge clk (
+module ouput_gen_posedge_clk (
     input clk,d,
     output reg q);
 
@@ -6,3 +6,4 @@ always @(posedge clk) begin
     q <= d;
 end
     endmodule
+
