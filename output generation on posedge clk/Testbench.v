@@ -1,10 +1,6 @@
-// Code your testbench here
-// or browse Examples
 `timescale 1ns / 1ps
-
 module test;
-  reg clk;
-  reg d;
+  reg clk, d;
   wire q;
   d dut ( .clk(clk),.d(d),.q(q));
   initial begin
@@ -31,5 +27,6 @@ module test;
   initial begin
     $monitor("Time=%0t, clk=%b , d=%b ,q=%b", $time, clk, d, q);
   end
+
 
 endmodule
