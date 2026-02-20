@@ -1,10 +1,7 @@
 module sync_async_reset_tb;
-
-  reg clk;
-  reg rst_n;
+  reg clk,rst_n;
   wire [7:0] counter;
-
- 
+  
   sync_async_reset dut (clk,rst_n,counter);
    
   always #5 clk = ~clk;
@@ -33,3 +30,4 @@ module sync_async_reset_tb;
   end
 
 endmodule
+
