@@ -1,9 +1,8 @@
-module test_fd;
-  wire clk_out;
+module FD_tb;
   reg clk, rst;
-
- 
-  FD Dut(clk, rst, clk_out);
+  wire clk_out;
+  
+  FD dut(clk, rst, clk_out);
 always #5 clk = ~clk;
 
   
@@ -17,12 +16,13 @@ always #5 clk = ~clk;
   end
 
   initial begin
-    $monitor("Time=%0t: clk=%b, rst=%b, clk_out=%b", $time, clk, rst, clk_out);
+    $monitor("Time=%0t: clk=%b | rst=%b | clk_out=%b", $time, clk, rst, clk_out);
   end
 
   
   initial begin
     $dumpfile("fd_wave.vcd");
-    $dumpvars(0, test_fd);
+    $dumpvars(0,clk, rst, clk_out);
   end
 endmodule
+
