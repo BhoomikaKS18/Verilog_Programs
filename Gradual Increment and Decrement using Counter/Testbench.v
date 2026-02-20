@@ -1,12 +1,10 @@
 `timescale 1ns/1ps
 
-module tb_counter;
-
-  reg clk;
-  reg rst;
+module counter_tb;
+  reg clk,rst;
   wire [2:0] count;
 
-  counter uut (clk,rst,count);
+  counter dut (clk,rst,count);
 
  
   initial clk = 0;
@@ -22,8 +20,6 @@ module tb_counter;
     #12 rst = 1;  
     
     #200;
-
     $finish;
   end
-
-endmodule
+    endmodule
