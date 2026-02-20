@@ -1,4 +1,3 @@
-// Code your design here
 module counter (clk,rst,count);
   input clk,rst;
   output reg [2:0] count;
@@ -6,22 +5,22 @@ module counter (clk,rst,count);
   
   always @(posedge clk or negedge rst)
     begin
-      if(!rst)
-        begin
-        count= 3'b000;
-        ctrl= 0;
-        end
-      else if(!ctrl)
-        begin
+    if(!rst)begin
+      count= 3'b000;
+      ctrl= 0;
+    end
+      
+      else if(!ctrl)begin
         count= count+1;
-          if(count==7)
-            ctrl= 1;
+        if(count==7)
+          ctrl= 1;
         end
-     else
-       begin
+        
+      else begin
         count= count-1;
-         if(count==0)
-            ctrl= 0;
+        if(count==0)
+          ctrl= 0;
         end 
     end
+
 endmodule
