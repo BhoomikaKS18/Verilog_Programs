@@ -1,4 +1,6 @@
-module my_design (input x, y, output o1, o2);
+module gate_delays (
+ input x, y,
+ output o1, o2);
 // AND gate has 1 time unit gate delay
  and #(1,2,3) a1 (o1, x, y);
 // BUFIF0 gate has 2 time unit gate delay
