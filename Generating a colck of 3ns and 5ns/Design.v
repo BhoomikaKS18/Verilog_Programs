@@ -14,3 +14,4 @@ module tb;
     $dumpvars(0, clk1,clk2); 
   end
     endmodule
+
