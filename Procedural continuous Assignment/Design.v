@@ -4,7 +4,10 @@ module dff (
   always @ (posedge clk)
     q<=din;
   always @ (rst) begin
-    if (rst)  assign q=1'b0;
-    else deassign q;  //Next assignment at posedge clk
+    if (rst)  
+      assign q=1'b0;
+    else 
+      deassign q;  //Next assignment at posedge clk
   end
     endmodule
+
