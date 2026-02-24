@@ -8,7 +8,7 @@ initial begin clk = 0;
 end
   
   initial begin
-    din = 0; \
+    din = 0; 
     rst = 0;
     #3 rst = 1; 
     #7 rst = 0;
@@ -23,3 +23,4 @@ end
     $monitor("Time=%0t | rst=%b | din=%b | q=%b", $time, rst, din, q);
   end
     endmodule
+
