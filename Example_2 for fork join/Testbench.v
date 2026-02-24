@@ -1,4 +1,4 @@
-module teb;
+module tb;
 initial fork
  #5 $display($time, "Thread A");
  begin
@@ -17,3 +17,4 @@ initial fork
   $display($time, "Thread I"); 
 join
  endmodule
+
